@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { IoIosArrowRoundForward } from "react-icons/io";
-
+import gmail from '../assets/gmail.png'
+import address from '../assets/location-pin.png'
+import phoneImg from '../assets/phone.png'
 export default function Contact() {
 
   const [copySuccessMessage, setCopySuccessMessage] = useState('')
@@ -104,32 +106,37 @@ export default function Contact() {
             </form>
             <div >
                 
-                <div className='flex flex-col w-full h-ful pb-24'>
-                    <div className='border w-full h-full px-3 py-4 rounded-md relative' onClick={copyEmail} onMouseOver={showInstruction} onMouseOut={hideInstruction}>
+                <div className='flex flex-col w-full h-ful pb-24 md:text-xl'>
+                    <div className=' w-full h-full px-2 py-4 rounded-md relative' onClick={copyEmail} onMouseOver={showInstruction} onMouseOut={hideInstruction}>
                         {msgState && (
                             <p className={`absolute top-0 left-0 right-0 bottom-0 bg-gray-500 rounded-md text-center md:py-4 lg:${style} hover:opacity-100 duration-500`}> {copySuccessMessage || instructions} </p>
                         )}
 
                         <div>
-                        Email:
-                            <p className='inline w-full h-full'> syedashafi4@gmail.com</p>      
+                           <img src={gmail} className='md:w-12 w-9 h-full inline px-2'  alt="" />
+                            <p className='inline w-full h-full'>  Email: syedashafi4@gmail.com</p>      
                         </div>
                     </div>
 
-                    <div className='py-4 border px-3 rounded-md my-4 relative'  onClick={copyPhone} 
+                    <div className='py-4  px-2 rounded-md my-4 relative'  onClick={copyPhone} 
                     onMouseOver={showInstructionPhone} onMouseOut={hideInstructionPhone}>
                          {msgStatePhone && (
                             <p className={`absolute top-0 left-0 right-0 bottom-0 bg-gray-500 rounded-md text-center py-4 lg:${style} hover:opacity-100 duration-500`}> {copySuccessMessagePhone || instructionsPhone} </p>
                         )}
 
                         <div>
+                        <span ><img src={phoneImg} className='md:w-12 w-9 h-full inline px-2'  alt="" />
                         Phone:
+                        </span>
                             <p className='inline w-full h-full'> 01744231929 </p>      
                         </div>
                     </div>
 
-                    <div className='border px-3 py-4 rounded-md' >
-                        Address: Moulvibazar, Sylhet, BD.
+                    <div className='px-2 py-4 rounded-md flex ' >
+                       <img src={address} className='md:w-12 w-9 h-full inline px-2'  alt="" />
+                     
+                       <p>  Address: Moulvibazar, Sylhet, BD. </p>
+                      
                     </div>
 
                 </div>
