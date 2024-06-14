@@ -8,6 +8,7 @@ import html from '../assets/html.jpg'
 import java_script from '../assets/java-script.png'
 import mysql from '../assets/mysql.png'
 import tailwind from '../assets/tailwind.png'
+import drf from '../assets/Django_REST.png'
 
 
 export default function Experience() {
@@ -66,6 +67,12 @@ export default function Experience() {
             title: 'MySQL',
             style:'shadow-orange-500',
         },
+        {
+            id:10,
+            src:drf,
+            title: 'DRF',
+            style:'shadow-red-500',
+        },
     ]
 
 
@@ -82,8 +89,8 @@ export default function Experience() {
 
                 {techs.map(({id, src, title, style})=>(
                     
-                    <div key={id} className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}>
-                        <img src={src} alt="" className='w-20 mx-auto' />
+                    <div key={id} className={`shadow-md hover:scale-105 duration-500 py-2 flex flex-col items-stretch justify-between rounded-lg ${style}`}>
+                        <img src={src} alt="" className='w-24 md:h-24 mx-auto' />
                          <p className='mt-4'>{title}</p>
                     </div>
 
