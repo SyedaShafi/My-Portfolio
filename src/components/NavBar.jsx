@@ -32,7 +32,7 @@ export default function NavBar() {
 ]
     
     return (
-        <div className = 'flex justify-between items-center fixed w-full h-20 bg-black text-white'>
+        <div className = 'flex justify-between items-center fixed w-full h-20 bg-black text-white z-50'>
             <div className = 'p-2 font-signature text-5xl'>Syeda Gulnaj</div>
 
             <div className='p-4 '> 
