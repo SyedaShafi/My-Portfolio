@@ -9,7 +9,7 @@ export default function About() {
             </div>
             <p className='text-xl'>
              
-                 Hi ther, I am Syeda Gulnaj Akther. I am a full stack developer. For front-end, I am proficient in HTML, CSS, JavaScript, and modern frameworks like React. I also have experience with design tools such as Tailwind and Bootstrap, which help me craft responsive and visually appealing user interfaces.  On the back-end, I specialize in Django and DRF, leveraging their powerful capabilities to build dynamic and secure server-side applications. I am well-versed in database management with MySQL, ensuring data integrity and optimal performance.
+                 Hi there, I am Syeda Gulnaj Akther. I am a full stack developer. For front-end, I am proficient in HTML, CSS, JavaScript, and modern frameworks like React. I also have experience with design tools such as Tailwind and Bootstrap, which help me craft responsive and visually appealing user interfaces.  On the back-end, I specialize in Django and DRF, leveraging their powerful capabilities to build dynamic and secure server-side applications. I am well-versed in database management with MySQL, ensuring data integrity and optimal performance.
             </p>
 
             <br />
