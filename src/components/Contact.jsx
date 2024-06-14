@@ -113,7 +113,7 @@ export default function Contact() {
                         )}
 
                         <div>
-                           <img src={gmail} className='md:w-12 w-9 h-full inline px-2'  alt="" />
+                           <img src={gmail} className='lg:w-12 w-9 h-full inline px-2'  alt="" />
                             <p className='inline w-full h-full'>  Email: syedashafi4@gmail.com</p>      
                         </div>
                     </div>
@@ -125,7 +125,7 @@ export default function Contact() {
                         )}
 
                         <div>
-                        <span ><img src={phoneImg} className='md:w-12 w-9 h-full inline px-2'  alt="" />
+                        <span ><img src={phoneImg} className='lg:w-12 w-9 h-full inline px-2'  alt="" />
                         Phone:
                         </span>
                             <p className='inline w-full h-full'> 01744231929 </p>      
@@ -133,7 +133,7 @@ export default function Contact() {
                     </div>
 
                     <div className='px-2 py-4 rounded-md flex ' >
-                       <img src={address} className='md:w-12 w-9 h-full inline px-2'  alt="" />
+                       <img src={address} className='lg:w-12 w-9 h-full inline px-2'  alt="" />
                      
                        <p>  Address: Moulvibazar, Sylhet, BD. </p>
                       
