@@ -3,6 +3,8 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import gmail from '../assets/gmail.png'
 import address from '../assets/location-pin.png'
 import phoneImg from '../assets/phone.png'
+import axios from 'axios';
+
 export default function Contact() {
 
   const [copySuccessMessage, setCopySuccessMessage] = useState('')
@@ -62,6 +64,44 @@ export default function Contact() {
     setMsgStatePhone(false)
     setInstructionsPhone('')
   }
+// -----------------------------------------------------------------form submit handling--------------------------------------------------------
+  const API = import.meta.env.VITE_CONTACT
+  const [formSuccessMsg, setFormSuccessMsg] = useState('')
+  const [formErrorMsg, setFormErrorMsg] = useState('')
+  const initialFormData = {
+    name:'',
+    email:'',
+    message:'',
+  }
+  let messageTimeOut;
+  const [formData, setFormData] = useState(initialFormData);
+  const handleChange = (e)=>{
+    setFormData({
+      ...formData,
+      [e.target.name]:e.target.value
+    })
+  }
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    axios.post(API, formData)
+    .then((res)=>{
+      setFormData(initialFormData)
+      setFormSuccessMsg('Email sent successfully!')
+      setFormErrorMsg('')
+      clearTimeout(messageTimeOut)
+      messageTimeOut = setTimeout(()=>{
+        setFormSuccessMsg('')
+      }, 5000)
+    })
+    .catch((err)=>{
+      setFormErrorMsg('Some error occured.Please try again!')
+      setFormSuccessMsg('')
+      clearTimeout(messageTimeOut)
+      messageTimeOut = setTimeout(()=>{
+        setFormErrorMsg('')
+      }, 5000)
+    })
+  }
 
   return (
     <div name='contact' className='w-full h-full bg-gradient-to-b from-black to-gray-700 p-4 text-white lg:pl-20 xl:pl-0 '>
@@ -73,25 +113,31 @@ export default function Contact() {
         </div>
 
         <div className='grid md:grid-cols-2 sm:grid-cols-1 gap-12 justify-center items-start max-w-screen-lg w-full h-full mx-auto'>
-            <form action="https://getform.io/f/paqgreqa" method='POST' className='flex flex-col w-full  mb-20' >
-
+            <form className='flex flex-col w-full  mb-20' onSubmit={handleSubmit} >
                 <input 
                 type="text" 
                 name='name' 
+                value={formData.name}
                 placeholder='Enter Your Name'
+                onChange={handleChange}
                 required
                 className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none' />
+
                 <input 
                 type="email" 
                 name='email' 
+                value={formData.email}
                 placeholder='Enter Your Email'
+                onChange={handleChange}
                 required
                 className='p-2 my-3 bg-transparent border-2 rounded-md text-white focus:outline-none' />
 
                 <textarea 
                 name="message" 
+                value={formData.message}
                 placeholder='Enter Your Message'
                 row='10' 
+                onChange={handleChange}
                 required
                 className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none' 
                 id=""></textarea>
@@ -102,8 +148,11 @@ export default function Contact() {
                       <IoIosArrowRoundForward className='h-10 w-10 group-hover:translate-x-24 group-hover:opacity-0 duration-700 transition-all' />
                     </span>
                 </button>
+                {formErrorMsg && (<p className='text-red-600 font-semibold text-xl'>{formErrorMsg}</p>)}
+                {formSuccessMsg && (<p className ='text-green-600 font-semibold text-xl'>{formSuccessMsg}</p>) }
 
             </form>
+
             <div >
                 
                 <div className='flex flex-col w-full h-ful pb-24 md:text-xl'>
@@ -141,8 +190,6 @@ export default function Contact() {
 
                 </div>
             </div>
-
-
         </div>
     </div>
   )

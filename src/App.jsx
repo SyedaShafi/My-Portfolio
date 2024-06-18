@@ -5,19 +5,30 @@ import About from './components/About'
 import Portfolio from './components/Portfolio'
 import Experience from "./components/Experience"
 import Contact from "./components/Contact"
+import Preloader from "./components/Preloader"
+import { useEffect, useState } from "react"
+
 
 function App() {
-  return (
-    <>
-    <NavBar></NavBar>
-    <Home></Home>
-    <About></About>
-    <Portfolio></Portfolio>
-    <Experience></Experience>
-    <Contact></Contact>
+const [loading, setLoading] = useState(true);
+useEffect(()=>{
+  setTimeout(()=>{setLoading(false)}, 2000)
 
-    <SocialLinks></SocialLinks>
-    </>
+}, [])
+
+  return (
+    loading ? (<Preloader></Preloader>) :
+              (  <>
+                <NavBar></NavBar>
+                <Home></Home>
+                <About></About>
+                <Portfolio></Portfolio>
+                <Experience></Experience>
+                <Contact></Contact>
+                <SocialLinks></SocialLinks>
+                </>
+            )
+    
   )
 }
 

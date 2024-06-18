@@ -57,7 +57,7 @@ export default function SocialLinks() {
         <ul>
             {liItems.map(({id, child, href, style, download}) =>
             (
-                <li key={id} className={`flex ml-[-98px] hover:ml-[-10px] justify-between items-center px-4 bg-gray-700 p-2 w-40 duration-700 ${style}`}>
+                <li key={id} className={`flex ml-[-98px] hover:ml-[-10px] justify-between items-center px-4 bg-gray-700 p-2 w-40 duration-500 ${style}`}>
                     <a 
                    
                     href={href}
