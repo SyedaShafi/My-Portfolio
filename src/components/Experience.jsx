@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import axios  from 'axios'
+import { PulseLoader } from 'react-spinners'
+
 export default function Experience() {
 
     const API = import.meta.env.VITE_EXPERIENCE
    
     const [techs, setTechs] = useState([])
-
+    const [loading, setLoading] = useState(true)
     useEffect(()=>{
         axios.get(API)
         .then((res)=>{
             // console.log(res.data)
             setTechs(res.data)
+            setLoading(false)
         })
-        .catch((err)=>{console.log(err)})
+        .catch((err)=>{
+            console.log(err)
+            setLoading(false)
+    })
     }, [API])
 
 
@@ -25,6 +31,8 @@ export default function Experience() {
                 <p className='text-xl'>These are the technologies I have worked with!</p>
             </div>
 
+            {loading ? (<div className='text-center'> <PulseLoader size={30} color="#9abcb5" ></PulseLoader></div> ): (
+                
             <div className='w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-4'>
                 {techs.map((tech)=>(
                   
@@ -36,6 +44,8 @@ export default function Experience() {
 
                 ))}               
             </div>
+            )}
+
 
         </div>
 

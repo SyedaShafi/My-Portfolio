@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { PulseLoader } from 'react-spinners'
+
+
 export default function Portfolio() {
     const API = import.meta.env.VITE_PORTFOLIO
     const[portfolios, setPortfolios] = useState([])
+    const [loading, setLoading] = useState(true)
+
 
 useEffect(()=>{
     axios.get(API)
     .then((res)=>{
         // console.log(res.data);
         setPortfolios(res.data);
+        setLoading(false)
     }).catch((err)=>{
         console.log(err);
+        setLoading(false)
+
     })
 }, [])
 
@@ -23,7 +31,8 @@ useEffect(()=>{
                 <p className='pb-12 lg:px-0 px-4 text-2xl font-medium text-gray-200'>Have a Look on some of my works</p>
             </div>
 
-            <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-8 px-12 sm:px-4'>
+            {loading ? (<div className='text-center'> <PulseLoader size={30} color="#9abcb5" ></PulseLoader></div>): (
+                   <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-8 px-12 sm:px-4'>
                 {/* all portfolios */}
 
                 {portfolios.map(({id, image, code_link, live_link})=>(
@@ -43,6 +52,9 @@ useEffect(()=>{
                 ))}
 
             </div>
+            )}
+
+         
 
         </div>
 

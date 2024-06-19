@@ -4,7 +4,7 @@ import gmail from '../assets/gmail.png'
 import address from '../assets/location-pin.png'
 import phoneImg from '../assets/phone.png'
 import axios from 'axios';
-
+import { SyncLoader  } from 'react-spinners';
 export default function Contact() {
 
   const [copySuccessMessage, setCopySuccessMessage] = useState('')
@@ -68,6 +68,7 @@ export default function Contact() {
   const API = import.meta.env.VITE_CONTACT
   const [formSuccessMsg, setFormSuccessMsg] = useState('')
   const [formErrorMsg, setFormErrorMsg] = useState('')
+  const [loading, setLoading] = useState(false)
   const initialFormData = {
     name:'',
     email:'',
@@ -83,8 +84,10 @@ export default function Contact() {
   }
   const handleSubmit = (e)=>{
     e.preventDefault()
+    setLoading(true)
     axios.post(API, formData)
     .then((res)=>{
+      setLoading(false)
       setFormData(initialFormData)
       setFormSuccessMsg('Email sent successfully!')
       setFormErrorMsg('')
@@ -108,12 +111,14 @@ export default function Contact() {
         <div className='flex flex-col py-4 justify-center max-w-screen-lg mx-auto h-full'>
             <div className='pb-8'>
                 <p className='text-7xl font-signature pb-12'>Contact</p>
-                <p className='text-xl'>Please Fill the form To Reach Me!</p>
+                <p className='text-xl'>Please Fill This Form To Reach Me!</p>
             </div>
         </div>
 
         <div className='grid md:grid-cols-2 sm:grid-cols-1 gap-12 justify-center items-start max-w-screen-lg w-full h-full mx-auto'>
-            <form className='flex flex-col w-full  mb-20' onSubmit={handleSubmit} >
+            <div>
+                {loading ? (<div className='md:mt-8 lg:text-start text-center'><SyncLoader color="#676f6e" size={20} /></div>) : (
+              <form className='flex flex-col w-full  md:mb-20' onSubmit={handleSubmit} >
                 <input 
                 type="text" 
                 name='name' 
@@ -152,6 +157,9 @@ export default function Contact() {
                 {formSuccessMsg && (<p className ='text-green-600 font-semibold text-xl'>{formSuccessMsg}</p>) }
 
             </form>
+          )}
+          
+            </div>
 
             <div >
                 
