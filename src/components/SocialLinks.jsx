@@ -6,50 +6,49 @@ import {BsFillPersonLinesFill} from 'react-icons/bs'
 
 export default function SocialLinks() {
     const liItems = [
-        {
-            id:1,
-            child :(
-                <>
-                    LinkedIn  
-                    <FaLinkedin size={35} ></FaLinkedin>
-                </> 
-            ),
-            href: 'https://www.linkedin.com/in/syedagulnaj/',
-            style: 'rounded-tr-md',
-        },
-        {
-            id:2,
-            child :(
-                <>
-                    GitHub  
-                    <FaGithub size={35} ></FaGithub>
-                </> 
-            ),
-            href: 'https://github.com/SyedaShafi',
-            
-        },
-        {
-            id:3,
-            child :(
-                <>
-                    Mail  
-                    <HiOutlineMail size={35}></HiOutlineMail>
-                </> 
-            ),
-            href: 'mailto:syedashafi4@gmail.com',
-        },
-        {
-            id:4,
-            child :(
-                <>
-                    Resume  
-                    <BsFillPersonLinesFill size={35}></BsFillPersonLinesFill>
-                </> 
-            ),
-            href: '/resume.pdf',
-            style: 'rounded-br-md',
-            download: true,
-        },
+      {
+        id: 1,
+        child: (
+          <>
+            LinkedIn
+            <FaLinkedin size={35}></FaLinkedin>
+          </>
+        ),
+        href: 'https://www.linkedin.com/in/syedagulnaj/',
+        style: 'rounded-tr-md',
+      },
+      {
+        id: 2,
+        child: (
+          <>
+            GitHub
+            <FaGithub size={35}></FaGithub>
+          </>
+        ),
+        href: 'https://github.com/SyedaShafi',
+      },
+      {
+        id: 3,
+        child: (
+          <>
+            Mail
+            <HiOutlineMail size={35}></HiOutlineMail>
+          </>
+        ),
+        href: 'mailto:syedashafi4@gmail.com',
+      },
+      {
+        id: 4,
+        child: (
+          <>
+            Resume
+            <BsFillPersonLinesFill size={35}></BsFillPersonLinesFill>
+          </>
+        ),
+        href: 'https://drive.google.com/file/d/1rMRr1YKq4aHu-sBH2jVNlNlhbJwR8QX7/view?usp=sharing',
+        style: 'rounded-br-md',
+        download: true,
+      },
     ];
 
   return (
@@ -62,8 +61,6 @@ export default function SocialLinks() {
                    
                     href={href}
                     className='text-white flex  justify-between items-center w-full' 
-                    download={download ?'resume.pdf' : 'undefined'} 
-                    rel="noreferrer" 
                     target='_blank'> 
 
                       {child}
