@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Preloader from './components/Preloader';
 import { useEffect, useState } from 'react';
 import Footer from './components/Footer';
+import Education from './components/Education';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -24,6 +25,7 @@ function App() {
       <NavBar></NavBar>
       <Home></Home>
       <About></About>
+      <Education></Education>
       <Portfolio></Portfolio>
       <Experience></Experience>
       <Contact></Contact>

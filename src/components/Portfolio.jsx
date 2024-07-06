@@ -23,7 +23,7 @@ useEffect(()=>{
 }, [])
 
   return (
-    <div name='portfolio' className='bg-gradient-to-b from-black to-gray-700 w-full text-white h-auto'>
+    <div name='portfolio' className='bg-gradient-to-b from-gray-700 to-black w-full text-white h-auto'>
 
         <div className='max-w-screen-lg mx-auto py-28 flex flex-col justify-center w-full h-full lg:pl-20 xl:pl-0'>
             <div className='pb-8'>

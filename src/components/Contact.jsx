@@ -107,7 +107,7 @@ export default function Contact() {
   return (
     <div
       name='contact'
-      className='w-full h-full bg-gradient-to-b from-black to-gray-700 p-4 text-white lg:pl-20 xl:pl-0 '
+      className='w-full h-full bg-gradient-to-b from-gray-700 to-black p-4 text-white lg:pl-20 xl:pl-0 '
     >
       <div className='flex flex-col py-4 justify-center max-w-screen-lg mx-auto h-full'>
         <div className='pb-8'>
