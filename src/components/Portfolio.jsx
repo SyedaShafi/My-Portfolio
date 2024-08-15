@@ -23,11 +23,11 @@ useEffect(()=>{
 }, [])
 
   return (
-    <div name='portfolio' className='bg-gradient-to-b from-gray-700 to-black w-full text-white h-auto'>
+    <div name='projects' className='bg-gradient-to-b from-gray-700 to-black w-full text-white h-auto'>
 
         <div className='max-w-screen-lg mx-auto py-28 flex flex-col justify-center w-full h-full lg:pl-20 xl:pl-0'>
             <div className='pb-8'>
-                <p className='text-7xl font-signature pb-12 lg:px-0 px-4'>Portfolio</p>
+                <p className='text-7xl font-signature pb-12 lg:px-0 px-4'>Projects</p>
                 <p className='pb-12 lg:px-0 px-4 text-2xl font-medium text-gray-200'>Have a Look on some of my works</p>
             </div>
 

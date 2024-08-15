@@ -23,11 +23,11 @@ export default function Experience() {
 
 
   return (
-    <div name='experience' className='bg-gradient-to-b from-black to-gray-700 w-full h-full py-12'>
+    <div name='skills' className='bg-gradient-to-b from-black to-gray-700 w-full h-full py-12'>
         <div className='max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white lg:pl-20 xl:pl-0'>
 
             <div className='py-8'>
-                <p className='text-7xl font-signature pb-12'>Experience</p>
+                <p className='text-7xl font-signature pb-12'>Skills</p>
                 <p className='text-xl'>These are the technologies I have worked with!</p>
             </div>
 

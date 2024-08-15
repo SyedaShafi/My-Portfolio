@@ -22,11 +22,11 @@ export default function NavBar() {
         },
         {
             id:4,
-            link:'portfolio'
+            link:'projects'
         },
         {
             id:5,
-            link:'experience'
+            link:'skills'
         },
         {
             id:6,

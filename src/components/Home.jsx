@@ -29,12 +29,12 @@ export default function Home() {
           </p>
 
           <div>
-            <Link to={'portfolio'} smooth duration={700}>
+            <Link to={'projects'} smooth duration={700}>
               <button
                 className='group flex justify-center items-center bg-gradient-to-r from-blue-400 via-blue-700
                      to-blue-950 px-6 py-3 rounded-xl hover:px-8 duration-300 text-xl font-medium w-fit'
               >
-                Portfolio
+                Projects
                 <span className='group-hover:rotate-90 duration-300'>
                   <IoIosArrowRoundForward className='h-10 w-10' />
                 </span>
